@@ -14,20 +14,23 @@
 \usepackage{subfigure}
 \usepackage{float}
 \usepackage[font=small, labelsep=space, labelformat=default]{caption}
-\usepackage[left=3.0cm, right=2.5cm, top=2.5cm, bottom=2.5cm]{geometry}   % 页边距
+\usepackage[left=3.0cm, right=2cm, top=2.5cm, bottom=2.5cm]{geometry}   % 页边距
+
+\linespread{1.2}  % 1.2倍行间距
 
 %name选项中不要使用中文逗号
 \CTEXsetup[name={第,章 },format={\bfseries\zihao{3}},aftername={\enspace},beforeskip={24bp},afterskip={18bp}]{section}  % 一级标题样式
 \CTEXsetup[format={\raggedright\zihao{-3}},aftername={\enspace},beforeskip={24bp},afterskip={6bp}]{subsection}          % 二级标题样式
 \CTEXsetup[format={\raggedright\zihao{4}},aftername={\enspace},beforeskip={12bp},afterskip={6bp}]{subsubsection}        % 三级标题样式
 
-\captionsetup[table]{name=Tab.}      % 表格样式
-\captionsetup[figure]{name=Fig.}     % 图片样式
+\captionsetup[table]{name=表.}      % 表格样式
+\captionsetup[figure]{name=图.}     % 图片样式
 
 \title{\fontsize{36pt}{12pt}\textbf{这里是封面标题}}   % 标题： 字体36磅，行距12磅, 加粗
 \author{高飞}                                          % 作者
 \date{\today}                                          % 日期
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 \maketitle
 \newpage  % 新页
@@ -92,12 +95,22 @@ Average Rate & 0.920 & 0.882 & 0.477 & 0.539 & 0.923\\ % Summary/total row
 
 \subsection{图片}
 狼伴归途，最精彩的就是宏大的史前场景再现，让人看了非常的享受，被其所征服。故事的情节还是比较的简单，年轻的孩子在失去父母呵护之后，通过自己的和狼的努力，经历千辛万苦最后回到了父母的怀抱。狼和孩子一起，最终平安到家，并为部落带来了狼这种动物，我想之后就是被驯化成狗。
-
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.75\textwidth]{Figures/GalleriaStampe}   % 0.75倍显示图片大小
     \caption{GalleriaStampe}
     \label{woGalleriaStampelf}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \subfigure{\includegraphics[width=6.0cm,height=6.0cm]{Figures/road}}  
+    \subfigure{\includegraphics[width=6.0cm,height=6.0cm]{Figures/wolf}}  \\
+    \vspace{-0.3cm}
+    \subfigure{\includegraphics[width=6.0cm,height=6.0cm]{Figures/wolf}}
+    \subfigure{\includegraphics[width=6.0cm,height=6.0cm]{Figures/road}}  
+    \caption{狼伴归途场景}
+    \label{wolf2}
 \end{figure}
 
 \end{document}
