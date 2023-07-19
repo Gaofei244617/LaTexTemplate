@@ -1,0 +1,47 @@
+\documentclass[UTF8]{ctexart}
+
+\usepackage{listings}
+\usepackage[dvipsnames]{xcolor}
+
+% 在导言区进行样式设置
+\lstset{
+    language=Python, % 设置语言
+    basicstyle=\ttfamily, % 设置字体族
+    breaklines=true, % 自动换行
+    keywordstyle=\bfseries\color{NavyBlue}, % 设置关键字为粗体，颜色为 NavyBlue
+    morekeywords={}, % 设置更多的关键字，用逗号分隔
+    emph={self}, % 指定强调词，如果有多个，用逗号隔开
+    emphstyle=\bfseries\color{Rhodamine}, % 强调词样式设置
+    commentstyle=\itshape\color{black!50!white}, % 设置注释样式，斜体，浅灰色
+    stringstyle=\bfseries\color{PineGreen!90!black}, % 设置字符串样式
+    columns=flexible, %代码紧凑一些
+    numbers=left, % 显示行号在左边
+    numbersep=2em, % 设置行号的具体位置
+    numberstyle=\footnotesize, % 缩小行号
+    frame=single, % 边框
+    framesep=1em % 设置代码与边框的距离
+}
+
+\begin{document}
+
+\begin{lstlisting}
+import random
+import collections
+Card = collections.namedtuple('Card', ['rank', 'suit'])
+# 一个叫做 FrenchDesk 的类
+class FrenchDesk:
+    ranks = [str(n) for n in range(2, 11)] + list('JQKA')
+    suits = 'spades diamonds clubs hearts'.split()
+    
+    def __init__(self):
+        self._cards = [Card(rank, suit) for rank in self.ranks for suit in self.suits]
+        
+    def __len__(self):
+        return len(self._cards)
+        
+    def __getitem__(self, position):
+        return self._cards[position]
+desk = FrenchDesk()
+\end{lstlisting}
+
+\end{document}
