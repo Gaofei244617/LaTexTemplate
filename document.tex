@@ -10,6 +10,7 @@
 \usepackage{graphicx}                    % 插入图片相关
 \usepackage{subfigure}
 \usepackage{float}                       %为浮动体提供不浮动的 H 模式；提供自定义浮动体结构的功能
+\usepackage{fancyhdr}
 
 \linespread{1.5}  % 1.5倍行间距
 
@@ -28,11 +29,15 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 \maketitle
+\thispagestyle{empty}
+
 \newpage  % 新页
-
 \tableofcontents   % 目录页
-\newpage           % 新页
+\pagestyle{empty}
 
+\newpage           % 新页
+\pagestyle{fancy}
+\setcounter{page}{1} 
 \section{Hello 中国}
 中国位于东亚地区。
 
